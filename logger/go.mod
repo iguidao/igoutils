@@ -1,4 +1,4 @@
-module github.com/iguidao/igoutils
+module github.com/iguidao/igoutils/logger
 
 go 1.19
 

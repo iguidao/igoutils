@@ -1,4 +1,4 @@
-package igoutils
+package httpapi
 
 import (
 	"bytes"
