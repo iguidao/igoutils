@@ -19,7 +19,7 @@ func SetupLogger(logpath, logname string) *zap.SugaredLogger {
 		fmt.Println("create logs dir err, ", err.Error())
 	}
 	syncWriter := zapcore.AddSync(&lumberjack.Logger{
-		Filename:  logname,
+		Filename:  logpath + logname,
 		MaxSize:   1024,
 		LocalTime: true,
 		Compress:  true,
