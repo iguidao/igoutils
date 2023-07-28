@@ -10,28 +10,6 @@ import (
 	"github.com/redis/go-redis/v9"
 )
 
-// 单点和codis链接
-type ClientConnect struct {
-	*redis.Client
-}
-
-var RD ClientConnect
-
-func ConnectRedis(addr, password string) bool {
-	rd := redis.NewClient(&redis.Options{
-		Addr:     addr,
-		Password: password, // no password set
-		// DB:       0,        // use default DB
-	})
-	RD = ClientConnect{rd}
-	_, err := RD.Ping(ctx).Result()
-	if err != nil {
-		logger.Error("Redis Connect Error: ", err)
-		return false
-	}
-	return true
-}
-
 var ctx = context.Background()
 
 // Base op
