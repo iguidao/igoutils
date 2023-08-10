@@ -1,7 +1,6 @@
 package opredis
 
 import (
-	"context"
 	"strconv"
 	"time"
 
@@ -9,8 +8,6 @@ import (
 
 	"github.com/redis/go-redis/v9"
 )
-
-var ctx = context.Background()
 
 // Base op
 func TypeKey(keyname string) (string, bool) {

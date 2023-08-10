@@ -1,6 +1,8 @@
 package opredis
 
 import (
+	"context"
+
 	"github.com/iguidao/igoutils/logger"
 
 	"github.com/redis/go-redis/v9"
@@ -11,6 +13,7 @@ type ClientConnect struct {
 	*redis.Client
 }
 
+var ctx = context.Background()
 var RD ClientConnect
 
 func ConnectRedis(addr, password string) bool {
